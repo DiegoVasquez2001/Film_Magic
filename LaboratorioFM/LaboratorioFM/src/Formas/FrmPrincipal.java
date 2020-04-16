@@ -35,6 +35,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         mmPelicula = new javax.swing.JMenuItem();
         mmVideojuegos = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         mgMembresia = new javax.swing.JMenuItem();
 
@@ -75,6 +78,18 @@ public class FrmPrincipal extends javax.swing.JFrame {
         mmVideojuegos.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         mmVideojuegos.setText("Videojuegos");
         jMenu3.add(mmVideojuegos);
+
+        jMenuItem1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jMenuItem1.setText("Autores");
+        jMenu3.add(jMenuItem1);
+
+        jMenuItem2.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jMenuItem2.setText("Categorías");
+        jMenu3.add(jMenuItem2);
+
+        jMenuItem3.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jMenuItem3.setText("Clasificaciones");
+        jMenu3.add(jMenuItem3);
 
         jMenu6.add(jMenu3);
 
@@ -162,6 +177,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem mgMembresia;
     private javax.swing.JMenuItem mmPelicula;
     private javax.swing.JMenuItem mmVideojuegos;
