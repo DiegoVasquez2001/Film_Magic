@@ -5,7 +5,11 @@
  */
 package Formas;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -120,6 +124,11 @@ public class FrmGenMem extends javax.swing.JInternalFrame {
 
         btnRegistrar.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         btnRegistrar.setText("Registrar Cliente");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panDatosLayout = new javax.swing.GroupLayout(panDatos);
         panDatos.setLayout(panDatosLayout);
@@ -213,6 +222,33 @@ public class FrmGenMem extends javax.swing.JInternalFrame {
         membresia+=valorRandom;
         txtMembresia.setText(membresia);
     }//GEN-LAST:event_btnGenerarActionPerformed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+       try{
+           int estatus=1;
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/film_magic", "root", "informaticdv2016");
+            PreparedStatement pst = cn.prepareStatement("insert into Cliente values(?,?,?,?,?,?,?)");
+            
+            pst.setString(1, txtMembresia.getText().trim());
+            pst.setString(2, txtDPI.getText().trim());
+            pst.setString(3, txtNombre.getText().trim());
+            pst.setString(4, txtApellido.getText().trim());
+            pst.setString(5, txtTelefono.getText().trim());
+            pst.setString(6, txtCorreo.getText().trim());
+            pst.setInt(7, estatus);
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "CLIENTE REGISTRADO");
+            txtMembresia.setText("");
+            txtNombre.setText("");
+            txtApellido.setText("");
+            txtTelefono.setText("");
+            txtCorreo.setText("");
+            txtDPI.setText("");
+            txtDPI.requestFocus();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
